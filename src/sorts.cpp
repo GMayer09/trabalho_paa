@@ -128,12 +128,41 @@ void heapSort(std::vector<int>& arr) {
     // TODO: implementar Heapsort
 }
 
-void intercala(std::vector<int>& arr, int inicio, int meio, int fim) {
+void interleaveMerge(std::vector<int>& arr, int bg, int md, int end) {
+    int i = bg;
+    int j = md + 1;
+    int k = 0;
+    int size = end - bg + 1;
+    std::vector<int> array_temp(size);
+    
+    while (i <= md && j <= end) {
+        if (arr[i] <= arr[j]) {
+            array_temp[k++] = arr[i++];
+        } else {
+            array_temp[k++] = arr[j++];
+        }
+    }
 
+    while (i <= md) {
+        array_temp[k++] = arr[i++];
+    }
+
+    while (j <= end) {
+        array_temp[k++] = arr[j++];
+    }
+
+    for (int idx = 0; idx < k; idx++) {
+        arr[bg + idx] = array_temp[idx];
+    }
 }
 
-void mergeSortAux(std::vector<int>& arr, int inicio, int fim) {
-
+void mergeSortAux(std::vector<int>& arr, int bg, int end) {
+    if (bg < end) {
+        int md = bg + (end - bg) / 2;
+        mergeSortAux(arr, bg, md);
+        mergeSortAux(arr, md + 1, end);
+        interleaveMerge(arr, bg, md, end);
+    }
 }
 
 void mergeSort(std::vector<int>& arr) {

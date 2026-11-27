@@ -34,6 +34,24 @@ int main() {
     resetTimer(timer);
     quickSort(vector);
     printTimer(timer);
+
+    vector = random_v;
+    cout << "MergeSort com vetor desordenado: ";
+    resetTimer(timer);
+    mergeSort(vector);
+    printTimer(timer);
+
+    vector = sorted_v;
+    cout << "MergeSort com vetor ordenado: ";
+    resetTimer(timer);
+    mergeSort(vector);
+    printTimer(timer);
+
+    vector = inversed_v;
+    cout << "MergeSort com vetor ordenado decrescente: ";
+    resetTimer(timer);
+    mergeSort(vector);
+    printTimer(timer);
     
     return 0;
 }
