@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
     TimePoint timer;
-    size_t vector_size = 10000000;
+    size_t vector_size = 100000;
     vector<int> random_v = randomVector(vector_size);
     vector<int> sorted_v = sortedVector(vector_size);
     vector<int> inversed_v = inversedSortedVector(vector_size);
@@ -38,7 +38,7 @@ int main() {
 
     // Shell Sort
     vector = random_v;
-    cout << "Shell Sort com vetor desordenado: ";
+    cout << "\nShell Sort com vetor desordenado: ";
     resetTimer(timer);
     shellSort(vector);
     printTimer(timer);
@@ -57,7 +57,7 @@ int main() {
 
     // Bubble Sort
     vector = random_v;
-    cout << "Bubble Sort com vetor desordenado: ";
+    cout << "\nBubble Sort com vetor desordenado: ";
     resetTimer(timer);
     bubbleSort(vector);
     printTimer(timer);
@@ -76,7 +76,7 @@ int main() {
 
     // Quick Sort
     vector = random_v;
-    cout << "Quick Sort com vetor desordenado: ";
+    cout << "\nQuick Sort com vetor desordenado: ";
     resetTimer(timer);
     quickSort(vector);
     printTimer(timer);
@@ -95,7 +95,7 @@ int main() {
 
     // Selection Sort
     vector = random_v;
-    cout << "Selection Sort com vetor desordenado: ";
+    cout << "\nSelection Sort com vetor desordenado: ";
     resetTimer(timer);
     selectionSort(vector);
     printTimer(timer);
@@ -114,7 +114,7 @@ int main() {
 
     // Heap Sort
     vector = random_v;
-    cout << "Heap Sort com vetor desordenado: ";
+    cout << "\nHeap Sort com vetor desordenado: ";
     resetTimer(timer);
     heapSort(vector);
     printTimer(timer);
@@ -133,7 +133,7 @@ int main() {
 
     // Merge Sort
     vector = random_v;
-    cout << "Merge Sort com vetor desordenado: ";
+    cout << "\nMerge Sort com vetor desordenado: ";
     resetTimer(timer);
     mergeSort(vector);
     printTimer(timer);
@@ -152,7 +152,7 @@ int main() {
     
     // Radix Sort
     /*vector = random_v;
-    cout << "Radix Sort com vetor desordenado: ";
+    cout << "\nRadix Sort com vetor desordenado: ";
     resetTimer(timer);
     radixSort(vector);
     printTimer(timer);
