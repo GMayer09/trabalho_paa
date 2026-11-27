@@ -5,11 +5,11 @@
 
 using namespace std;
 
-void reset_timer(TimePoint& timer) {
+void resetTimer(TimePoint& timer) {
     timer = Clock::now();
 }
 
-void print_timer(TimePoint timer) {
+void printTimer(TimePoint timer) {
     auto now = Clock::now();
     chrono::duration<double> time = now - timer;
 
