@@ -151,7 +151,7 @@ int main() {
     printTimer(timer);
     
     // Radix Sort
-    /*vector = random_v;
+    vector = random_v;
     cout << "\nRadix Sort com vetor desordenado: ";
     resetTimer(timer);
     radixSort(vector);
@@ -167,7 +167,7 @@ int main() {
     cout << "Radix Sort com vetor ordenado decrescente: ";
     resetTimer(timer);
     radixSort(vector);
-    printTimer(timer);*/
+    printTimer(timer);
 
     return 0;
 }
