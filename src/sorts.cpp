@@ -128,8 +128,16 @@ void heapSort(std::vector<int>& arr) {
     // TODO: implementar Heapsort
 }
 
+void intercala(std::vector<int>& arr, int inicio, int meio, int fim) {
+
+}
+
+void mergeSortAux(std::vector<int>& arr, int inicio, int fim) {
+
+}
+
 void mergeSort(std::vector<int>& arr) {
-    // TODO: implementar Mergesort
+    mergeSortAux(arr, 0, arr.size() - 1);
 }
 
 void radixSort(std::vector<int>& arr) {

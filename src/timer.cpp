@@ -5,14 +5,14 @@
 
 using namespace std;
 
-void reset_timer(TimePoint& tempo_atual) {
-    tempo_atual = Clock::now();
+void reset_timer(TimePoint& timer) {
+    timer = Clock::now();
 }
 
-void print_timer(TimePoint tempo_atual) {
-    auto agora = Clock::now();
-    chrono::duration<double> duracao = agora - tempo_atual;
+void print_timer(TimePoint timer) {
+    auto now = Clock::now();
+    chrono::duration<double> time = now - timer;
 
     cout << fixed << setprecision(6)
-              << duracao.count() << " segundos\n";
+              << time.count() << " segundos\n";
 }
