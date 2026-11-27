@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Insertion Sort
 void insertionSort(vector<int>& arr) {
     const size_t n = arr.size();
 
@@ -24,6 +25,7 @@ void insertionSort(vector<int>& arr) {
     }
 }
 
+// Shell Sort
 void shellSort(std::vector<int>& arr) {
     const size_t n = arr.size();
     size_t gap = 1;
@@ -51,6 +53,7 @@ void shellSort(std::vector<int>& arr) {
     }
 }
 
+// Bubble Sort
 void bubbleSort(std::vector<int>& arr) {
     const size_t n = arr.size();
 
@@ -71,6 +74,7 @@ void bubbleSort(std::vector<int>& arr) {
     }
 }
 
+// Quick Sort
 static int partition(std::vector<int>& arr, int left, int right) { // Função auxiliar para o quickSort
     int mid = left + (right - left) / 2;
     swap(arr[mid], arr[right]);
@@ -103,6 +107,7 @@ void quickSort(std::vector<int>& arr) {
     quickSortHelper(arr, 0, arr.size() - 1);
 }
 
+// Selection Sort
 void selectionSort(std::vector<int>& arr) {
     const size_t n = arr.size();
 
@@ -124,10 +129,40 @@ void selectionSort(std::vector<int>& arr) {
     }
 }
 
-void heapSort(std::vector<int>& arr) {
-    // TODO: implementar Heapsort
+// Heap Sort
+static void heapify(std::vector<int>& arr, int n, int i) {
+    int largest = i; 
+    int left = 2 * i + 1; 
+    int right = 2 * i + 2; 
+
+    if (left < n && arr[left] > arr[largest]) {
+        largest = left;
+    }
+
+    if (right < n && arr[right] > arr[largest]) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        std::swap(arr[i], arr[largest]);
+        heapify(arr, n, largest);
+    }
 }
 
+void heapSort(std::vector<int>& arr) {
+    int n = arr.size();
+
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        heapify(arr, n, i);
+    }
+
+    for (int i = n - 1; i > 0; i--) {
+        std::swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
+    }
+}
+
+// Merge Sort
 void interleaveMerge(std::vector<int>& arr, int bg, int md, int end) {
     int i = bg;
     int j = md + 1;
@@ -170,7 +205,7 @@ void mergeSort(std::vector<int>& arr) {
 }
 
 void radixSort(std::vector<int>& arr) {
-    // TODO: implementar Radix Sort
+
 }
 
 std::vector<AlgoritmoOrdenacao> obter_algoritmos() {

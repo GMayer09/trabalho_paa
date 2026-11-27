@@ -7,7 +7,18 @@ CXXFLAGS = -Wall -Wextra -O2 -std=c++17 -Iinclude
 SRC_DIR = src
 INC_DIR = include
 BUILD_DIR = build
-TARGET = $(BUILD_DIR)/programa
+
+ifeq ($(OS),Windows_NT)
+    TARGET = $(BUILD_DIR)/programa.exe
+    MKDIR = if not exist $(BUILD_DIR) mkdir $(BUILD_DIR)
+    RMDIR = if exist $(BUILD_DIR) rmdir /s /q $(BUILD_DIR)
+    RUN_TARGET = $(BUILD_DIR)\programa.exe
+else
+    TARGET = $(BUILD_DIR)/programa
+    MKDIR = mkdir -p $(BUILD_DIR)
+    RMDIR = rm -rf $(BUILD_DIR)
+    RUN_TARGET = ./$(TARGET)
+endif
 
 # Arquivos fonte e headers
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
@@ -22,14 +33,14 @@ $(TARGET): $(SRCS) $(HDRS) | $(BUILD_DIR)
 
 # Cria a pasta build/ se não existir
 $(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
+	$(MKDIR)
 
 # Compila e executa
 run: all
-	./$(TARGET)
+	$(RUN_TARGET)
 
 # Limpa a pasta build e o binário gerado
 clean:
-	rm -rf $(BUILD_DIR)
+	$(RMDIR)
 
 .PHONY: all run clean
