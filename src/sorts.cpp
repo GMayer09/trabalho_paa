@@ -204,6 +204,7 @@ void mergeSort(std::vector<int>& arr) {
     mergeSortAux(arr, 0, arr.size() - 1);
 }
 
+// Radix Sort
 void countingSortByDigit(vector<int>& arr, int exp) {
     int n = static_cast<int>(arr.size());
     vector<int> output(n);

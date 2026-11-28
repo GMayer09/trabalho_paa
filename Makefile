@@ -1,7 +1,7 @@
 # Compilador e flags
 CXX = g++
 # -Iinclude aponta para a pasta de headers (#include "sorts.hpp")
-CXXFLAGS = -Wall -Wextra -O2 -std=c++17 -Iinclude
+CXXFLAGS = -Wall -Wextra -O2 -std=c++23 -Iinclude
 
 # Pastas e nome do executável
 SRC_DIR = src
